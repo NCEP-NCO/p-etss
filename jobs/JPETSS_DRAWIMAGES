@@ -1,0 +1,76 @@
+#!/bin/sh
+
+########################################
+# Runs GFS MDL Extratropical Storm Surge Model
+########################################
+
+set -x
+date
+export PS4=' $SECONDS + '
+
+#####################################
+# SET SHELL PROCESSING VARIABLES
+#####################################
+
+export DATA=${DATA:-${DATAROOT:?}/${jobid:?}}
+mkdir $DATA
+mkdir $DATA/shp
+mkdir $DATA/img
+export SHPpetss=$DATA/shp
+export IMGpetss=$DATA/img
+
+cd $DATA
+
+export LOCALJLOG="YES"
+export jlogfile="${DATA}/jlogfile.${jobid:?}"
+
+export RUN_ENVIR=${RUN_ENVIR:-PROD}
+export NET=${NET:-petss}
+export RUN=${RUN:-petss}
+
+export pgmout="OUTPUT.${pid}"
+export cycle=${cycle:-t${cyc}z}
+
+export EXECpetss=${HOMEpetss}/exec
+export PARMpetss=${HOMEpetss}/parm/drawshp
+export USHpetss=${HOMEpetss}/ush
+export SCRIpetss=${HOMEpetss}/scripts
+
+setpdy.sh
+. ./PDY
+
+export COMIN=${COMIN:-$(compath.py ${NET}/${petss_ver}/${RUN}.${PDY})}
+
+export COMOUT=${COMOUT:-$(compath.py -o ${NET}/${petss_ver}/${RUN}.${PDY})}
+mkdir -p ${COMOUT}
+
+
+########################################################
+# Execute the script.
+${HOMEpetss}/scripts/expetss_drawimages.sh
+########################################################
+export err=$?; err_chk
+
+msg="JOB $job HAS COMPLETED NORMALLY."
+postmsg $jlogfile "$msg"
+
+if [[ "${LOCALJLOG}" == "YES" ]]; then
+  if [[ ! -r "${jlogfile}" ]]; then
+    echo "Cannot read jlogfile (${jlogfile})"
+  elif [[ ! -s "${jlogfile}" ]]; then
+    echo "Jlogfile (${jlogfile}) is 0 bytes."
+  else
+    cp "${jlogfile}" "${COMOUT}"
+  fi
+fi
+
+cat $pgmout
+
+
+if [ "${KEEPDATA}" != "YES" ]; then
+  cd $DATAROOT
+  rm -rf $DATA
+fi
+
+date
+

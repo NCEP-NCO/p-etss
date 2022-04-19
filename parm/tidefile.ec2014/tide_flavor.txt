@@ -1,0 +1,74 @@
+# This contains a basin and the preferred tide flavor.
+# Choices are V1, V2, V2.1.X, V2.2.X, V3
+# NAVD-88 basins in P-Surge 2.0
+ pn2:V4.1.00.0
+ pv2:V4.2.00.112
+ ny3:V4.1.00.112
+ de3:V4.2.00.19
+ cp5:V4.4.00.8
+hor3:V4.4.00.5
+ ht3:V4.4.00.6
+ il3:V4.2.00.2
+hch2:V4.2.00.100
+esv4:V4.2.00.150
+# Uncertain on ejx3?
+ejx3:V4.2.00.4
+ co2:V4.1.00.48
+ pb3:V4.1.00.116
+hmi3:V4.1.00.9
+eke2:V4.1.00.7
+efm2:V4.1.00.4
+etp3:V4.1.80.4
+# Uncertain on cd2?
+ cd2:V4.1.60.4
+ ap3:V4.2.30.4
+hpa2:V4.2.00.4
+epn3:V4.1.00.7
+emo2:V4.2.00.0
+ ms7:V4.2.00.4
+ lf2:V4.2.00.6
+ebp3:V4.2.00.2
+egl3:V4.2.00.8
+ ps2:V4.1.00.5
+ cr3:V4.2.00.11
+ebr3:V4.1.00.0
+eok3:V4.1.00.0
+# NGVD-29 basins in P-Surge 1.0
+ pnb:V2.1.0
+ bos:V2.1.0
+ pvd:V2.1.0
+ ny2:V2.1.0
+ de2:V2.1.0
+ acy:V2.1.0
+ oce:V2.1.0
+ cp2:V2.1.0
+eorf:V2.1.0
+ehat:V2.1.0
+ ilm:V2.1.0
+hchs:V2.1.0
+ svn:V2.1.0
+ ssi:V2.1.0
+ejax:V2.1.0
+ cof:V2.1.0
+ pbi:V2.1.0
+hmia:V2.1.0
+ekey:V2.1.0
+ bha:V2.1.0
+evir:V2.1.0
+hsju:V2.1.0
+efmy:V2.1.0
+etpa:V2.1.0
+ cdr:V2.1.0
+ apc:V2.1.0
+hpam:V2.1.0
+epns:V2.1.0
+emob:V2.1.0
+hbix:V2.1.0
+ msk:V2.1.0
+ lft:V2.1.0
+ebpt:V2.1.0
+egl2:V2.1.0
+ psx:V2.1.0
+ cr2:V2.1.0
+ br2:V2.1.0
+eoke:V2.1.0

@@ -1,0 +1,75 @@
+ 74     NO. OF OUPUT STATIONS     (UPDATED Jun. 2015)                    
+EASTPORT  EASTPORT, ME         44.9033   66.9850 999 999 464 334.4036732                         
+BAR HARBR BAR HARBOR, ME       44.3916   68.2050 999 999 261 336.0436448                         
+PTLAND    PORTLAND, ME         43.6566   70.2466 999 999 634 340.2192900                         
+PORTSMTH  PORTSMOUTH, NH       43.0712   70.7117 999 999 102 339.5314776                         
+BOSTON    BOSTON, MA           42.3550   71.0516 999 999 258 337.1982850                         
+SANDWICH  SANDWICH, MA         41.7716   70.5066 999 999 389 331.5437774                         
+BUZZRD B  BUZZARDS BAY, MA     41.7416   70.6183 999 999 631 331.8588137                         
+NANTCKET  NANTUCKET, MA        41.2850   70.0966 999 999 659 326.8964307                         
+WOODS HL  WOODS HOLE, MA       41.5233   70.6716 999 999 017 330.8144336                         
+PROVDNCE  PROVIDENCE, RI       41.8066   71.4016 999 999 707 335.8140330                         
+N BEDFORD NEW BEDFORD, MA      41.5933   70.9000 999 999 628 332.2532472                         
+NEWPORT   NEWPORT, RI          41.5050   71.3266 999 999 865 333.7155981                         
+BLOCK IS  BLOCK ISLAND, RI     41.1583   71.6133 999 999 839 333.0184142                         
+N LONDON  NEW LONDON, CT       41.3550   72.0866 999 999 277 336.5962049                         
+BRIDGEPT  BRIDGEPORT, CT       41.1733   73.1816 999 999 688 341.5357493                         
+STAMFORD  STAMFORD, CT         41.0383   73.5466 999 999 085 342.9203603                         
+MONTAUK   MONTAUK, NY          41.0483   71.9600 999 999 644 334.0874354                         
+LONG BC.  LONG BEACH, NY       40.5834   73.5733 999 999 488 340.3258157                         
+PT JEFFSN PORT JEFFERSON, NY   40.9500   73.0766 999 999 954 339.5974642                         
+WLLET PT  WILLETS POINT, NY    40.7933   73.7816 999 999 491 342.9261541                         
+BATTERY   BATTERY, NY          40.7000   74.0150 999 999 028 343.8616130                         
+BERGEN PT BERGEN POINT,NY      40.6400   74.1466 999 999 196 344.3640413                         
+SANDY HK  SANDY HOOK, NJ       40.4666   74.0100 999 999 152 342.3939932                         
+ATL CITY  ATLANTIC CITY, NJ    39.3550   74.4183 999 999 973 337.5702188                         
+CAPE MAY  CAPE MAY, NJ         38.9683   74.9600 999 999 899 338.7371892                         
+PHILDPIA  PHILADELPHIA, PA     39.9333   75.1416 999 999 649 347.0934058                         
+REEDY PT  REEDY POINT, DE      39.5583   75.5733 999 999 120 348.1238330                         
+LEWES     LEWES, DE            38.7816   75.1200 999 999 300 338.5374677                         
+BRKWTR HR BREAKWATER  HR, DE   38.8760   75.1516 999 999 387 339.5718288                         
+OCEAN CTY OCEAN CITY, MD       38.3266   75.0833 999 999 355 334.2674921                         
+BALTMRE   BALTIMORE, MD        39.2666   76.5783 999 999 197 355.2892242                         
+ANNPLIS   ANNAPOLIS, MD        38.9833   76.4800 999 999 963 352.4839961                         
+CAMBRIDGE CAMBRIDGE, MD        38.5733   76.0683 999 999 527 345.4032422                         
+WASH DC   WASHINGTON, DC       38.8733   77.0216 999 999 737 357.3028346                         
+SOLOMONS  SOLOMONS, MD         38.3166   76.4516 999 999 448 347.1988567                         
+WACHAPRG  WACHAPREAGUE, VA     37.6066   75.6866 999 999 193 332.6666989                         
+KIPTOPEKE KIPTOPEKE BEACH, VA  37.1666   75.9883 999 999 818 330.7959724                         
+COLONL BC COLONIAL BEACH, VA   38.2516   76.9600 999 999 695 352.2529701                         
+LEWISETTA LEWISETTA, VA        37.9950   76.4650 999 999 740 344.5742634                         
+GLOUC PT  GLOUCESTER POINT, VA 37.2466   76.5000 999 999 149 337.4316982                         
+CBBT      CHESAPEAKE BBT, VA   36.9666   76.1133 999 999 293 329.7091307                         
+OLD PT CMPOLD PT. COMFORT, VA  37.0033   76.3150 999 999 482 332.4259016                         
+HMPTN RDS HAMPTON ROADS, VA    36.9467   76.3316 999 999 769 331.8969987                         
+PTSMTH    PORTSMOUTH, VA       36.8216   76.2933 999 999 257 329.8843902                         
+VA BEACH  VIRGINIA BEACH, VA   36.8316   75.9683 999 999 555 326.4160031                         
+DUCK FRF  DUCK, FRF PIER, NC   36.1833   75.7466 999 999 219 314.8738876                         
+CAPE HT   CAPE HATTERAS, NC    35.2233   75.6350 999 999 759 297.1140172                         
+AVON NC   AVON, NC             35.3466   75.5000 999 999 518 298.3439089                         
+BEAUFORT  BEAUFORT, NC         34.7200   76.6700 999 999 360 295.7426502                         
+MORHD CTY MOREHEAD CITY, NC    34.7200   76.7266 999 999 042 296.3545884                         
+WILMTN NC WILMINGTON, NC       34.2266   77.9533 999 999 146 298.1233393                         
+WRIGTVL B WRIGHTSVILLE BCH, NC 34.2100   77.7950 999 999 147 294.8526850                         
+HOLDEN B  HOLDEN BEACH, NC     33.9133   78.3039 240 290                                         
+SPRNGMAID SPRINGMAID PIER, SC  33.6550   78.9183 203 290                                         
+MYRTL B   MYRTLE BEACH, SC     33.6833   78.8850 205 290                                         
+CHLSTON   CHARLESTON, SC       32.7816   79.9250 100 150                                         
+SAVANH    SAVANNAH, GA         32.0800   81.0816 213  41                                         
+SAVNH R E SAVANNAH RI ENT, GA  32.0333   80.9016 210  52                                         
+FT PULASK FORT PULASKI, GA     32.0333   80.9016 210  52                                         
+FERNDINA  FERNANDINA, FL       30.6716   81.4650 999 999 210 60.7431282                          
+MAYPORT   MAYPORT, FL          30.4000   81.4133 999 999 339 65.5294780                          
+CUTLER    CUTLER NAVAL BAS, ME 44.6416   67.2966 999 999 387 334.2122988                         
+WELLS     WELLS, ME            43.3200   70.5633 999 999 922 339.9367436                         
+NEW HAVEN NEW HAVEN, CT        41.2833   72.9083 999 999 706 340.6098846                         
+BISHOPS   BISHOPS HEAD, MD     38.2200   76.0383 999 999 124 342.1297565                         
+MCCREADY  MCCREADYS CREEK, MD  38.3000   76.0066 999 999 885 342.5157720                         
+BEAVER    BEAVER CREEK, MD     38.4283   76.2366 999 999 241 345.8970154                         
+PINEY PNT PINEY POINT, MD      38.1333   76.5333 999 999 281 346.5335376                         
+POTOMAC   POTOMAC RV ALEX, VA  38.8050   77.0383 999 999 327 357.0427708                         
+SUNSET    SUNSET BEACH, NC     33.8650   78.5067 230 292                                         
+OYSTER    OYSTER LANDING, SC   33.3516   79.1867 175 268   # DRY (174 271)                       
+S CAPERS  SOUTH CAPERS IS, SC  32.8566   79.7066 118 191                                         
+FRIPP     FRIPP INLET, SC      32.3400   80.4650 172  71                                         
+ST SIMONS ST SIMONS IS, GA     31.1317   81.3967 999 999 751 55.3097294                          

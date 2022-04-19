@@ -1,0 +1,516 @@
+4/24  BSL: ms8, ms8mom, ms8trk added
+           ms7, ms7mom, ms7trk retired
+
+3/24  BSL: cp5, cp5mom, cp5trk added
+           cp2, cp2mom, cp2trk retired
+
+#------ 1/1/2014 ----
+3/29  BSL: ok3, ok3mom, ok3trk added
+           ok2, ok2mom, ok2trk retired
+
+#------ 1/1/2013 ----
+12/6  BSL: ht3, ht3mom, ht3trk added
+	   ht2, ht2mom, ht2trk retired	
+8/13   WB: or3, or3mom, or3trk added
+           orf, orfmom, orftrk added
+6/06   WB: ap3, ap3mom, ap3trk added
+	   ap2, ap2mom, ap2trk retired	
+6/05  BSL: pn2, pn2mom, pn2trk added
+	   pnb, pnbmom, pnbtrk retired	
+5/31  BSL: ms7, ms7mom, ms7trk added
+           ms6, ms6mom, ms6trk retired
+4/9   BSL: cr3, cr3mom, cr3trk added
+	   cr2, cr2mom, cr2trk retired
+2/8   BSL: egl3, egl3mom, egl3trk added 
+           egl2, egl2mom, egl2trk retired
+      BSL: ejx3, ejx3mom, ejx3trk added
+           ejax, ejaxmom, ejaxtrk retired
+
+#------ 1/1/2012 ----
+12/20 BSL: lf2, lf2mom, lf2trk added
+           lft, lftmom, lfttrk retired
+
+09/27 BSL: ch2, ch2mom, ch2trk added
+           chs, chsmom, chstrk retired
+      BSL: sv4, sv4mom, sv4trk added 
+           sv3. sv3mom, sv3trk retired
+
+04/28 BSL: ms6, ms6mom, ms6trk added
+           ms5, ms5mom, ms5trk retired 
+
+01/06 SSM: br3, br3mom, br3trk added
+	   br2, br2mom, br2trk retired
+#------ 1/1/2011 ----
+12/13 SSM: il3, il3mom, il3trk added
+	   il2, il2mom, il2trk retired
+
+06/29 BSL: ms5, ms5mom, ms5trk added
+	   ms4, ms4mom, ms4trk retired
+		
+06/03 SSM: ny3, ny2mom, ny2trk added
+	   ny2, ny2mom, ny2trk retired
+
+04/20 SSM: ke2, ke2mom, ke2trk added
+           key, keymom, keytrk retired
+	   
+03/29 SSM: fm2, fm2mom, fm2trk added
+	   fmy, fmymom, fmytrk retired
+#------ 1/1/2010 ----
+12/16 BSL: hm3, hm3mom, hm3trk added
+           hmi, hmimom, hmitrk retired
+
+12/09 BSL: cd2, cd2mom, cd2trk added
+           cdr, cdrmom, cdrtrk retired     
+
+11/30 SSM: pb3, pb3mom, pb3trk added
+	   pbi, pbimom, pbitrk retired
+      BSL: ap2, ap2mom, ap2trk added
+           apc, apcmom, apctrk retired
+
+11/03 SSM: co2, co2mom, co2trk added
+	   cof, cofmom, coftrk retired 
+      BSL: pa2, pa2mom, pa2trk added
+	   pam, pammom, pamtrk retired	
+
+9/24  SSM: de3, de3mom, de3trk added
+	   de2, de2mom, de2trk retired
+
+ 9/1  SSM: ep3, ep3mom, ep3trk added
+	   ep2, ep2mom, ep2trk retired
+ 8/18 SSM: vi2, vi2mom, vi2trk added
+	   vir, virmom, virtrk retired
+ 7/9  BSL: made tp3 operational, retired etp
+ 7/9  BSL: tp3, tp3mom, tp3trk added
+           etp, etpmom, etptrk retired  
+
+ 6/9  SSM: made ms4 operational, retired ms3
+ 6/9  SSM: ms4, ms4mom, ms4trk added
+	   ms3, ms3mom, ms3trk retired
+ 3/18 JMS: ssi, ssimom, ssitrk retired
+ 3/10 JMS: pv2, pv2mom, pv2trk added
+	   pvd, pvdmom, pvdtrk retired
+	   bos, bosmom, bostrk retired
+	   ms3, ms3mom, ms3trk retired
+#
+#----- Release: Version 1.47e 02/05/2009 -----
+#
+
+ 2/5  JMS: made eb3 operational, retired ebp (redo)
+ 2/5  JMS: eb3,eb3mom,eb3trk re-added fixed barrier points
+	     ebp,ebpmom,ebptrk re-retired
+#
+#----- Release: Version 1.47d 01/22/2009 -----
+#
+ 1/22 AAT: ebp,ebpmom,ebptrk re-added because of bad levy in eb3. 
+            eb3,eb3mom,eb3trk re-moved
+ 1/16 AAT: Discovered that 1.47c is corrupt
+#
+#
+#------ 1/1/2009 ----
+#
+#----- Release: Version 1.47c 12/11/2008 -----
+#
+# 
+#----- Release: Version 1.47b 11/25/2008 -----
+#
+ 11/17 JMS: em2, em2mom, em2trk added--redo with more tracks
+	     sv3, sv3mom, sv3trk added--redo with more tracks
+ 10/27 JMS: made emo2 operational, retired emob 
+ 10/27 JMS: em2,em2mom,em2trk added
+           emo,emomom,emotrk retired
+ 10/27 AAT: sv3,sv3mom,sv3trk added
+           svn,svnmom,svntrk retired
+ 7/02 AAT: Did a tolower on all the files in the msbtrk and ms3trk folders
+#
+#----- Release: Version 1.47 06/20/2008 -----
+#
+  6/14 AAT: Renamed msb/ms3 MEOWs to remove _i from names so inquire all works
+            properly.
+#
+#----- Release: Version 1.46 05/16/2008 -----
+#
+
+ 5/16 AAT: eb3,eb3mom,eb3trk added
+           ebp,ebpmom,ebptrk retired
+ 5/16 AAT: ok2,ok2_12ft4,ok2_13ft4,ok2_14ft4,ok2_15ft4,ok2_16ft4,ok2_20ft4,ok2mom,ok2trk added
+           oke,oke17ft5,oke18ft5,oke19ft5,oke20ft5,oke21ft5,okemom,oketrk retired
+ 5/16 AAT: msb,msbmom,msbtrk added
+           ms3,ms3mom,ms3trk added
+           msk,mskmom,msktrk retired
+ 5/16 AAT: Started fixing the datum column in the sloshdsp.bnt
+ 5/16 AAT: Updated the labels in the sloshdsp.bnt file for EBP/EB3
+ 5/16 AAT: Updated the labels in the sloshdsp.bnt file for OKE/OK2
+ 5/16 AAT: Added MSB to basins.dta
+ 5/16 AAT: Updated the labels in the sloshdsp.bnt file for MSB/MS3/MSK
+ 5/16 AAT: Added 4 basins for Florida contractors, and 4 basins for hawaii
+ 4/3  AAT: Reordered location of BP3 in ebasins.dta
+#
+#----- Release: Version 1.45 03/19/2008 -----
+#
+?/?  --- bixmom revert to 7/14/1999
+ 3/19 AAT: ps2,ps2mom,ps2trk added
+           psx,psxmom,psxtrk retired
+ 3/19 AAT: il2,il2mom,il2trk added
+           ilm,ilmmom,ilmtrk retired
+ 3/19 AAT: Updated status of ps2/psx, il2/ilm
+#
+#----- Release: Version 1.44 02/22/2008 -----
+#
+ ?/?  --- bixmom revert to 10/3/1999
+ 2/22 Andrea Conver: Re-Created pvdmom.shp for safety.
+ 2/22 AAT Made sure that pvdmom matched pvd, and pvd is from 1/9/2003 version
+ 2/22 AAT Fixed orfmom (had ignored parallel MEOWs)
+ 2/22 Andrea Conver: Expanded the coverage of jaxmom shapefiles to full grid.
+ 2/22 Andrea Conver: Recreated the ilmmom.shp files.
+ 2/22 AAT Fixed cp2mom (had ignored parallel MEOWs)
+ 2/19 AAT: Un-retiring ilm because of bad init value
+ 2/14 Andrea Conver: Added prj and xml files to most of the ???mom folders
+ 2/01 AAT: Updating status of il2/ilm
+         : Also updating datum of eex2 and changed the order of et-basins
+ 1/31 AAT: ht2,ht2mom,ht2trk added
+           eht,ehtmom,ehttrk retired
+ 1/31 AAT: Adding ability to track NAVD/NGVD for basins.
+         : Adding eht2 (Hatteras) to definitions
+      ***: Adding ebp3 (Sabine Lake) Larger, grid cell reduced
+ 1/28 AAT: Removed sab 
+      ***: Added ebr3 (Laguna Madre) Larger, grid cell reduced
+ 1/04 AAT: Corrected eext2 definition.
+#
+#----- 1/1/2008 -----
+#
+12/18 AAT: Updated labels in sloshdsp.bnt to match Basin_Tracker labels
+12/12 AAT: Renaming esv2 to esv3 (already had an sv2)
+12/04 AAT: Correcting MO2e instead of emo2, Updated GOAe basin, 
+         : Added sabe (South Atlantic Byte et-basin)
+      ***: Added esv2 (Savannah) Larger
+10/29 AAT: Removing cp3 basin from definitions list (r127)
+10/22 ***: Added egoa (Gulf of AK et-basin) Grid
+10/16 AAT: Removing PNO (Penobscot Bay(Old) (r104), 'mini test (SAVE)'
+         : Removing KOLe (ekey west)
+         : Added eok2
+10/11 AAT: move chx to ch2, moved ch2 to hch2.
+         : Re-introduced pb2, and sv2 to basins.dta
+10/10 ***: Added egl3 (Galveston) Larger, grid cell reduced
+#
+#----- 10/02/2007 ----- Beginning of repoitory tacking of the bnt folder.
+#
+10/01 ---: Added eex2 (East Coast et-basin) Larger, grid cell reduced
+ 7/17 ---: Added emo2 (Mobile Bay) grid cell reduced
+#
+#----- Release: Version 1.43 05/09/2007 -----
+#
+ ?/?  --- ms2,ms2mom,ms2trk retired
+ 4/25 ---: Added hch2 (Charleston) Larger, grid cell reduced
+ 4/25 ---: Added pv2 (Buzzards Bay, Boston) Combined BOS and PVD
+ 4/25 ---: Added ms3 (New Orleans) identical to MS2
+#
+#----- Release: Version 1.42 03/21/2007 -----
+#
+#
+#----- Release: Version 1.40 01/03/2007 -----
+#
+#
+#----- 1/1/2007 -----
+#
+#----- Release: Version 1.40 07/10/2006 -----
+#
+  7/10 --- ep2mom, ep2trk added
+           epn, epnmom, epntrk retired
+  6/16 -*- ep2 added
+#
+#----- Release: Version 1.39 06/20/2006 -----
+#
+  ?/?  --- ep2,ep2mom,ep2trk removed
+#
+#----- Release: Version 1.39 06/15/2006 -----
+#
+  ?/?  --- acymom revert back to 10/13/2000
+  ?/?  --- apc revert back to 12/22/1998
+  ?/?  --- bixmom revert to 7/14/1999
+  ?/?  --- de2mom revert to 10/13/2000
+  ?/?  --- jax revert to 7/28/1998
+  ?/?  --- pnb revert to 10/6/1999
+  ?/?  --- pvd revert to 1/10/2003
+  6/15 --- mskmom added
+  6/7  --- msktrk added
+  6/5  --- ep2mom, ep2trk added
+  5/30 --- msk added
+  5/8  --- ep2 added
+#
+#----- Release: Version 1.38 05/01/2006 -----
+#
+  5/1  --- ehtmom modified
+#
+#----- Release: Version 1.38 01/05/2006 -----
+#
+ 12/19 --- cp2mom rerun (different initial water levels (1->0, 3,2->2))
+  3/7  --- cp2 rerun (different initial water levels (1->0, 3,2->2))
+#
+#----- Release: Version 1.36 01/21/2005 -----
+#
+  1/20 --- fmy,fmymom,fmytrk added
+           old MEOWs (same name) retired.
+  1/19 --- bos,bosmom,bostrk added
+           old MEOWs (same name) retired.
+#
+#----- Release: Version 1.36 01/03/2005 -----
+#
+ 11/4  --- cdrmom modified
+#
+#----- Release: Version 1.35 07/22/2004 -----
+#
+  6/25 --- pnbmom modfied
+#
+#----- Release: Version 1.34 01/07/2004 -----
+#
+  ?/?  --- pvdmom reverted to 1/2/2001
+#
+#----- Release: Version 1.34 06/01/2003 -----
+#
+  5/22 --- ms2mom modified
+  5/8  --- gl2mom modified
+#
+#----- Release: Version 1.33 01/21/2003 -----
+#
+  1/21 --- eht modified
+#
+#----- Release: Version 1.32 01/08/2003 -----
+#
+  1/9  --- pvd,pvdmom,pvdtrk added
+           old MEOWs (same name) retired.
+  9/18 --- ms2mom modified
+#
+#----- Release: Version 1.31 05/10/2002 -----
+#
+  ?/?  --- acymom revert back to 1/3/2001
+  ?/?  --- apc revert back to 2/22/1990
+  ?/?  --- bixmom revert to 10/3/1999
+  ?/?  --- cp2mom revert to 1/3/2001
+  ?/?  --- de2mom revert to 1/3/2001
+  ?/?  --- pnb reverted to 10/4/1999
+  5/9  --- ms2mom added.
+       --- msy, msymom, msytrk retired.
+  4/29 --- ms2 added.
+#
+#----- Release: Version 1.30 03/08/2002 -----
+#
+  ?/?  --- msy,msymom,msytrk unretired
+  3/7  --- gl2mom added
+           gle, glemom, gletrk retired
+  3/4  --- gl2trk added
+  2/26 --- gl2 added
+#
+#----- Release: Version 1.30 01/10/2002 -----
+#
+  ?/?  --- No more SLOSH DOS Install.
+  ?/?  --- ocemom reverted back to 1/3/2001
+#
+#----- Release: Version 1.2b 12/10/2001 -----
+#
+ 11/15 --- ocemom modified
+  ?/?  --- ms2, ms2mom, ms2trk removed
+#
+#----- Release: Version 1.2a 10/31/2001
+#
+ 10/31 --- ocemom modified
+ 10/30 --- ms2mom modified
+ 10/24 --- ms2 modified
+#
+#----- Release: Version 1.2a 10/09/2001 -----
+#
+ 10/9  --- ocemom modified
+  9/21 --- etp, etpmom modified
+  9/13 --- ms2, ms2mom added
+           msy, msymom, msytrk retired
+  9/7  --- ms2trk added
+#
+#----- Release: Version 1.2 04/27/2001 -----
+#
+  5/3  -*- ocemom modified
+#
+#----- Release: Version 1.2 04/26/2001 -----
+#
+  4/26 --- ocemom modified
+#
+#----- Release: Version 1.2 04/12/2001 -----
+#
+  4/11 --- ocemom modified
+           orfmom added
+  3/30 --- orf added
+#
+#----- Release: Version 1.2 01/08/2001 -----
+#
+  ?/?  --- apc reverted back yet again.
+  1/25 --- ocemom modified
+  1/3  --- cdrmom, chemom, cofmom, cr2mom, ebpmom, ehtmom, ekymom, emomom,
+           epnmom, etpmom, fmymom, glemom, hmimom, hnlmom, ilmmom, jaxmom,
+           lftmom, msymom, ny2mom, okemom, pammom, pbimom, psxmom, sjumom,
+           ssimom, svnmom, virmom modified
+  1/2  --- pnbmomm pvdmom modified
+ 11/21 --- cp2trk added
+ 11/20 --- cp2, cp2mom, oce added
+           chp, chpmom, chptrk retired.
+ 10/27 --- ocetrk added
+       -*- orftrk added
+ 10/13 --- acy, acymom, de2, de2mom added
+           del, delmom, deltrk retired
+ 10/12 --- acytrk modified
+           de2trk added
+  9/28 --- ny2trk added
+  9/27 --- ny2, ny2mom added
+           nyc, nycmom, nyctrk retired
+  ?/?  --- mia, miamom, miatrk retired
+  ?/?  --- eyw, eywmom, eywtrk retired
+#
+#----- Release: Version 1.1d 09/13/2000 -----
+#
+#
+#----- Release: Version 1.1c 07/12/2000 -----
+#
+#
+#----- Release: Version 1.1c 07/07/2000 -----
+#
+  6/26 --- eky, ekymom, hmi, hmimom added
+  6/23 --- hmitrk added
+  6/19 --- ekytrk added
+#
+#----- Release: Version 1.1 01/06/2000 -----
+#
+  ?/?  --- chetrk reverted back?
+  ?/?  --- chpmom now has 19981230 instead of 19981222
+ 10/6  --- pnb, pnbmom added
+ 10/3  --- bix modified
+  8/10 --- pnbtrk added
+#
+#----- Release: Version 1.0p2 07/24/1999 -----
+#
+  7/14 --- bix, bixmom added
+  7/6  --- bixtrk
+#
+#----- Release: Version 1.0p1 05/14/1999 -----
+#
+#
+#----- Release: Version 1.0 03/31/1999 -----
+#
+  ?/?  --- apc reverted back?
+#
+#----- Release: Version 1.0 02/19/1999 -----
+#
+  ?/?  --- apc reverted back yet again.
+#
+#----- Release: Version 1.0 02/01/1999 -----
+#
+  ?/?  --- apc reverted back?
+#
+#----- Release: Version 1.0h 01/09/1999 -----
+#
+  1/4  --- chetrk modified
+#
+#----- Release: Version 1.0h 12/23/1998 -----
+#
+ 12/23 --- bhamom, cdrmom, ebpmom, ehtmom, etpmom, fmymom, jax, sjumom,
+           virmom modified
+ 12/22 --- apc, apcmom, bha, cdr, chp, chpmom, cofmom, del, delmom,
+           ebp, eht, emo, emomom, epn, epnmom, etp, eyw, eywmom, fmy, gle,
+           glemom, lft, lftmom, mia, miamom, msy, msymom, pvdmom, sju,
+           vir modified
+ 12/21 --- che, chemom, ilm, ilmmom, pvd, ssi, ssimom, svn, svnmom modified
+ 11/23 --- ssitrk modified
+ 11/10 --- nyc, nycmom modified
+ 10/8  --- cr2, cr2mom, cr2trk added
+           crp, crpmom, crptrk retired
+#
+#----- Release: Version 1.0e 07/31/1998 -----
+#
+  7/29 --- jaxmom, pam, pammom added
+  7/28 --- jax added
+  5/29 --- br2, br2mom, br2trk added
+  4/28 --- delmom added
+#----- 1/1/1998 -----
+ 12/9  --- pvdmom added
+ 11/28 --- svn, svnmom, svntrk added
+  9/15 --- ebpmom added
+  9/12 --- ebp added
+  5/20 --- emotrk, oketrk added
+  4/4  --- emo,emomom added
+#----- 1/1/1997 -----
+  8/12 --- jaxtrk added
+  4/4  --- etpmom added
+  3/26 --- ehttrk added
+  3/25 --- eht, ehtmom added
+#----- 1/1/1996 -----
+  5/26 --- cof, glemom, sjumom, ssi, virmom added
+  5/25 --- crpmom added
+  4/4  --- lft added
+  2/27 --- epntrk added
+  2/24 --- pamtrk added
+  2/21 --- lfttrk added
+  2/10 --- ebptrk, hnlmom added
+  2/9  --- hnl added
+  2/7  --- bos, bosmom added
+  1/25 --- bostrk added
+#----- 1/1/1995 -----
+  9/6  --- hnltrk added
+  8/18 --- lftmom added
+  5/3  --- chetrk added
+  5/23 --- epnmom added
+  3/8  --- okemom added
+  3/7  --- epn added
+#----- 1/1/1994 -----
+ 12/17 --- oke added
+  5/24 --- chemom added
+  5/7  --- psxtrk added
+  4/14 --- psx added
+  3/1  --- ilmtrk added
+  2/25 --- psxmom added
+  2/3  --- che added
+#----- 1/1/1993 -----
+ 10/28 --- ilmmom added
+  9/16 --- ilm added
+  4/23 --- cdr added
+  4/22 --- cdrtrk added
+  4/16 --- pbimom added
+  3/4  --- cdrmom added
+#----- 1/1/1992 -----
+ 12/26 --- apc added
+ 12/23 --- apctrk added
+ 11/15 --- apcmom added
+ 10/3  --- vir added
+  7/23 --- sjutrk added
+  7/3  --- sju added
+  6/13 --- pbitrk added
+  5/30 --- pbi added
+  5/7  --- bhamom added
+  3/15 --- fmymom added
+  2/13 --- etp added
+  2/2  --- bha added
+  1/25 --- bhatrk added
+#----- 1/1/1991 -----
+ 10/7  --- virtrk added
+  9/10 --- fmytrk, etptrk added
+  9/5  --- fmy added
+  2/27 --- cofmom added
+  1/10 --- msymom added
+#----- 1/1/1990 -----
+ 11/20 --- coftrk added
+ 11/17 --- gletrk added
+ 11/16 --- gle added
+  4/21 --- miamom added
+  1/30 --- mia added
+  1/23 --- msytrk added
+#----- 1/1/1989 -----
+ 12/22 --- crptrk added
+ 12/21 --- miatrk added
+ 11/23 --- msy added
+  3/23 --- chpmom, eywmom, nycmom, ssimom added
+  2/1  --- ssitrk added
+  1/21 --- eywtrk added
+  1/12 --- eyw, pvd added
+#----- 1/1/1988 -----
+ 12/9  --- pvdtrk added
+ 10/13 --- nyctrk added
+ 10/9  --- deltrk added
+  8/27 --- chptrk added
+  8/13 --- nyc added
+  5/15 --- chp,crp,del added
+#----- 1/1/1987 -----

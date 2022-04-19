@@ -1,0 +1,46 @@
+#!/bin/bash
+
+. ${HOMEpetss:?}/versions/run.ver
+
+if [[ ${jump} == "N" ]] ; then
+qsub << EOF 
+  #PBS -N PETSS_PARSEDAT.${pid}
+  #PBS -j oe
+  #PBS -l walltime=1:10:00
+  #PBS -q ${QUEUE:?}
+  #PBS -A ETSS-DEV
+  #PBS -l place=vscatter,select=1:ncpus=12:mem=700MB
+  #PBS -l debug=true
+  #PBS -V
+  #PBS -W umask=022
+  #PBS -W depend=afterok:${petss_merg_id}
+
+  module load PrgEnv-intel/${PrgEnv_intel_ver}
+  module load intel/${intel_ver}
+  module load craype/${craype_ver}
+  module load cray-pals/${cray_pals_ver}
+  module load prod_util/${prod_util_ver}
+  module load cfp/${cfp_ver}
+  ${HOMEpetss}/jobs/JPETSS_PARSEDAT
+EOF
+else
+qsub << EOF 
+  #PBS -N PETSS_PARSEDAT.${pid}
+  #PBS -j oe
+  #PBS -l walltime=1:10:00
+  #PBS -q ${QUEUE:?}
+  #PBS -A ETSS-DEV
+  #PBS -l place=vscatter,select=1:ncpus=12:mem=700MB
+  #PBS -l debug=true
+  #PBS -V
+  #PBS -W umask=022
+
+  module load PrgEnv-intel/${PrgEnv_intel_ver}
+  module load intel/${intel_ver}
+  module load craype/${craype_ver}
+  module load cray-pals/${cray_pals_ver}
+  module load prod_util/${prod_util_ver}
+  module load cfp/${cfp_ver}
+  ${HOMEpetss}/jobs/JPETSS_PARSEDAT
+EOF
+fi

@@ -1,0 +1,32 @@
+# Tides in SLOSH Caveats. Amy Haase/ MDL 8/3/2012. 
+#<bsnabrev>: comment
+pn2: North end of Bay of Fundy tides may not be accurate
+pvd: Tidal datum adjustment field not smooth
+ny3: North Hudson River tides may not be accurate
+ny2: North Hudson River tides may not be accurate
+de3: Delaware River tides may not be accurate
+cp2: Northern reaches of Potomac and James River tides may not be accurate\n Tidal datum adjustment field not smooth
+ht2: Tides in Lake Mattamuskeet not real
+ehat: Tidal datum adjustment field not smooth
+il3: Rivers in Onslow Bay and Beaufort tides may not be accurate
+hchs: Tides in inland portions of rivers may not be accurate
+hch2: Tides in inland portions of rivers may not be accurate
+esv3: Tides in inland portions of rivers may not be accurate
+esv4: Tides in inland portions of rivers may not be accurate
+ekey: Tidal datum adjustment field not smooth
+efmy: Tidal datum adjustment field not smooth\n and is missing data at north tip of basin
+ejx2: Tides not able to be calculated\n Use ejx3
+etp3: Tides on Lake Tarpon may not be accurate
+ap2: Bad value in tide calculation at grid cell 84,168
+ap3: Bad value in tide calculation at grid cell 84,168
+emob: Tidal datum adjustment field not smooth
+hbix: Tidal datum adjustment field not smooth
+msk: Tidal datum adjustment field not smooth
+lft: Tidal datum adjustment field not smooth
+egm3: Tidal datum adjustment field not smooth near Florida Keys
+eex2: Tidal datum adjustment field not smooth near the Bahamas
+eoke: Tides in Okeechobee may not be accurate
+eok2: Tides in Okeechobee may not be accurate
+eok3: Tides in Okeechobee may not be accurate
+ht3:  Tidal datum adjustment field not smooth
+

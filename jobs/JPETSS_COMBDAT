@@ -1,0 +1,79 @@
+#!/bin/sh
+
+########################################
+# Runs GFS MDL Extratropical Storm Surge Model
+########################################
+
+set -x
+date
+export PS4=' $SECONDS + '
+
+#####################################
+# SET SHELL PROCESSING VARIABLES
+#####################################
+
+export pid=$$
+export DATA=${DATA:-${DATAROOT:?}/${jobid:?}}
+mkdir $DATA
+cd $DATA
+
+export LOCALJLOG="YES"
+export jlogfile="${DATA}/jlogfile.${jobid:?}"
+
+export pgmout="OUTPUT.${pid}"
+export cycle=${cycle:-t${cyc}z}
+
+export RUN_ENVIR=${RUN_ENVIR:-nco}
+export NET=${NET:-petss}
+export RUN=${RUN:-petss}
+
+export EXECpetss=$HOMEpetss/exec
+export SCRIPTSpetss=$HOMEpetss/scripts
+export USHpetss=$HOMEpetss/ush
+export LOGSpetss=$HOMEpetss/logs
+export FIXshared=$HOMEpetss/util/fix
+export USHutil=$HOMEpetss/util/ush
+export USHshared=$HOMEpetss/util/ush
+
+# Run setup to initialize working directory and utility scripts
+setpdy.sh
+. ./PDY
+
+export COMIN=${COMIN:-$(compath.py ${NET}/${petss_ver}/${RUN}.${PDY})}
+export COMOUT=${COMOUT:-$(compath.py -o ${NET}/${petss_ver}/${RUN}.${PDY})}
+#export COMIN=${COMIN:-${COMROOT:?}/${NET}/${envir}/${RUN}.${PDY}}
+#export COMOUT=${COMOUT:-${COMROOT:?}/${NET}/${envir}/${RUN}.${PDY}}
+export COMOUTwmo=${COMOUTwmo:-${COMOUT:?}/wmo}
+
+mkdir -p $COMOUT
+mkdir -p $COMOUTwmo
+env
+
+#$SCRIPTSpetss/expetss_combdat.sh.ecf
+########################################################
+# Execute the script.
+$SCRIPTSpetss/expetss_combdat.sh
+########################################################
+export err=$?; err_chk
+
+if [[ "${LOCALJLOG}" == "YES" ]]; then
+  if [[ ! -r "${jlogfile}" ]]; then
+    echo "Cannot read jlogfile (${jlogfile})"
+  elif [[ ! -s "${jlogfile}" ]]; then
+    echo "Jlogfile (${jlogfile}) is 0 bytes."
+  else
+    cp "${jlogfile}" "${COMOUT}"
+  fi
+fi
+
+# Delete data dir
+if [ "$KEEPDATA" != "YES" ]; then
+  cd ${DATAROOT:?}
+  rm -rf ${DATA}
+#  cd $COMOUT
+#  rm -f fns_obs.txt fns_ss.txt *.ss *.shef13 *Grid surgeGrid_gefs HSBY datelist
+
+fi
+
+date
+

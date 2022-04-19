@@ -1,0 +1,33 @@
+#PBS -N petss_combdat_%CYC%
+#PBS -j oe
+#PBS -A %PROJ%-%PROJENVIR%
+#PBS -S /bin/bash
+#PBS -q %QUEUE%
+#PBS -l walltime=00:10:00
+#PBS -l place=shared,select=1:ncpus=2:mpiprocs=2:ompthreads=1:mem=500MB
+#PBS -l debug=true
+
+model=petss
+%include <head.h>
+%include <envir-p1.h>
+
+export cyc=%CYC%
+
+module load intel/${intel_ver}
+module load cray-pals/${cray_pals_ver}
+module load cfp/${cfp_ver}
+
+# CALL executable job script here
+${HOMEpetss}/jobs/JPETSS_COMBDAT
+
+if [ $? -ne 0 ]; then
+  ecflow_client --abort="ERROR running J-job"
+  exit
+fi
+
+%include <tail.h>
+%manual
+#######################################################################
+# Purpose: To execute the job that runs the ETSS model on WCOSS
+#######################################################################
+%end

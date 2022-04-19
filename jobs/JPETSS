@@ -1,0 +1,107 @@
+#!/bin/bash
+
+#########################################################
+# Runs MDL Probabilistic Extratropical Storm Surge Model
+#########################################################
+
+set -x
+date
+export PS4=' $SECONDS + '
+
+#####################################
+# SET SHELL PROCESSING VARIABLES
+#####################################
+
+export pid=$$
+#export DATA=${DATA:-${DATAROOT:?}/petss_${PDY:?}_${cyc:?}}
+export DATA=${DATA:-${DATAROOT:?}/petss_${cyc:?}}
+mkdir $DATA
+cd $DATA
+
+export LOCALJLOG="YES"
+export jlogfile="${DATA}/jlogfile.${jobid:?}"
+
+export pgmout="OUTPUT.${pid}"
+export cycle=${cycle:-t${cyc}z}
+
+export WIND=${WIND:-NAEFS}
+export RUN_NewGEFS=${RUN_NewGEFS:-YES}
+export RUN_RETRO=${RUN_RETRO:-NO}
+
+if [[ ${WIND} == NAEFS ]]; then
+   if [[ ${RUN_NewGEFS} == YES ]] ; then
+     export cpuNUM=728
+   else
+     export cpuNUM=588
+   fi
+elif [[ ${WIND} == GEFS ]]; then
+    if [[ ${RUN_NewGEFS} == YES ]] ; then
+       export cpuNUM=434
+    else
+       export cpuNUM=294
+    fi
+fi
+
+export RUN_ENVIR=${RUN_ENVIR:-nco}
+export HIGHRES=${HIGHRES:-NO}
+
+export NETgfs=${NETgfs:-gefs}
+export NETcmce=${NETcmc:-cmce}
+export NETgefs=${NETgefs:-gefs}
+export NET=${NET:-petss}
+export RUN=${RUN:-petss}
+
+###################################
+# Set up the UTILITIES
+###################################
+
+export EXECpetss=$HOMEpetss/exec
+export PARMpetss=$HOMEpetss/parm
+export USHpetss=$HOMEpetss/ush
+export SCRIpetss=$HOMEpetss/scripts
+
+
+# Run setup to initialize working directory and utility scripts
+setpdy.sh
+. ./PDY
+
+##############################
+# Define COM Directories
+##############################
+#export COMINSS=${COMINSS:-${COMROOT:?}/${NET}/${petss_ver}/}
+export COMINSS=${COMINSS:-$(compath.py ${NET}/${petss_ver})}
+
+export COMOUT=${COMOUT:-$(compath.py -o ${NET}/${petss_ver}/${RUN}.${PDY})}
+export COMOUTwmo=${COMOUTwmo:-${COMOUT:?}/wmo}
+
+mkdir -p $COMOUT $COMOUTwmo
+if [[ ${HIGHRES} == "YES" ]]; then
+   mkdir -p $COMOUT/highres
+fi
+##########################################################################
+
+env
+########################################################
+# Execute the script.
+########################################################
+${SCRIpetss}/expetss.sh
+export err=$?; err_chk
+########################################################
+
+msg="JOB $job HAS COMPLETED NORMALLY."
+postmsg $jlogfile "$msg"
+
+if [[ "${LOCALJLOG}" == "YES" ]]; then
+  if [[ ! -r "${jlogfile}" ]]; then
+    echo "Cannot read jlogfile (${jlogfile})"
+  elif [[ ! -s "${jlogfile}" ]]; then
+    echo "Jlogfile (${jlogfile}) is 0 bytes."
+  else
+    cp "${jlogfile}" "${COMOUT}"
+  fi
+fi
+
+cat $pgmout
+
+date
+

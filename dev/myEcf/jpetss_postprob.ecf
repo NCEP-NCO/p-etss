@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Source model version file
+
+. ${HOMEpetss:?}/versions/run.ver
+
+######################################################################
+# The ECF options
+######################################################################
+
+qsub << EOF 
+  #PBS -N PETSS_POSTPROB_${pid}
+  #PBS -j oe
+  #PBS -l walltime=1:10:00
+  #PBS -q ${QUEUE:?}
+  #PBS -A ETSS-DEV
+  #PBS -l place=vscatter,select=2:ncpus=128:mem=20GB+1:ncpus=18:mem=20GB
+  #PBS -l debug=true
+  #PBS -V
+  #PBS -W umask=022
+  #PBS -W depend=afterok:${petss_id}
+
+  module load PrgEnv-intel/${PrgEnv_intel_ver}
+  module load intel/${intel_ver}
+  module load craype/${craype_ver}
+  module load cray-pals/${cray_pals_ver}
+  module load prod_util/${prod_util_ver}
+  module load cfp/${cfp_ver}
+  ${HOMEpetss}/jobs/JPETSS_POSTPROB
+EOF

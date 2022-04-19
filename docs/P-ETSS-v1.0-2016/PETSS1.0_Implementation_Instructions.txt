@@ -1,0 +1,132 @@
+#===================================================================
+# PETSS Version 1.0 - Implementation Instructions
+#    Huiqing Liu 2016-04-12
+#===================================================================
+# Contents:
+#   1) Check out PETSS 1.0 from the repository
+#   2) (re)Build the executables
+#   3) Run a test
+#   4) Check model results
+#===================================================================
+
+
+#===================================================================
+#   1) Check out PETSS 1.0 from the repository
+#===================================================================
+% workDir=<your working directory>
+% cd $workDir
+% svn co https://vlab.ncep.noaa.gov/svn/etss/petss/tags/PETSS1.0-spa/ petss1.0
+% cd petss1.0
+
+
+#===================================================================
+#   2) (re)Build the executables
+#===================================================================
+% cd sorc
+#  Load 'cray' module file to setup the environment.
+% module load ./build_petss.module.cray
+#  Build the executables for PETSS model
+% make -f makefile.petss.cray install
+
+#  Clean up afterwards.
+% make -f makefile.petss.cray clean
+% cd ../
+
+
+#===================================================================
+#   3) Run a test
+#===================================================================
+% cd dev
+
+#===================================================================
+# Step 1:  Run the model
+#===================================================================
+
+# Set (12/13) nodes in runPETSS.sh (e.g. export CPUs=12N or CPUs=13N)
+% grep CPUs ./runPETSS.sh
+
+#===================================================================
+# Kick off the model, replacing YYYYMMDD with date (e.g 20160329), 
+#  and XX with cycle (00, 06, 12, 18)
+#
+#    Either option (see below) makes a /dev/tmp directory and then 
+# treats that as the root from a production perspective.
+# (e.g. /dev/tmp/com, /dev/tmp/pcom)
+##===================================================================
+
+#  Option 1: Copy data from GEFS area to sandbox area (first run)
+% ./runPETSS.sh YYYYMMDD XX copy
+
+#  Option 2: Doesn't copy data from GEFS areas (second and later runs)
+% ./runPETSS.sh YYYYMMDD XX no-copy
+
+#  Option 1:     Copies input data from /com to petss1.0/dev/tmp/com test area.
+#  Both options: Runs petss1.0/dev/myEcf/jpetss.ecf to run the model.
+
+# Patience! - The model takes 38 (12 nodes) or 35 (13 nodes) minutes to run.  
+
+
+#===================================================================
+#   4) Check results
+#===================================================================
+#  PETSS1.0 model outputs the following products:
+#     1. NDFD Grid products in GRIB2 format
+#     2. Station output products in ASCII format
+#  which are saved in /com folders
+#===================================================================
+
+
+# Step 1: check the grib2 results in the /com folder.
+% ls tmp/com/petss/prod/petss.YYYYMMDD/petss*.m
+
+#===================================================================
+# There should be 4 grib2 files for each product for surge plus tide above NAVD-88:
+# a) 102-hr cumulative (0-102):
+#      petss.102hr.cum.${prod}.t${cyc}z.stormtide.${area}${res}
+# b) 1-hr incremental (0-1, 1-2, 2-3,...101-102):
+#      petss.1hr.inc.${prod}.t${cyc}z.stormtide.${area}${res}
+# c) 6-hr incremental (0-6, 6-12, 12-18,...96-102):
+#      petss.6hr.inc.${prod}.t${cyc}z.stormtide.${area}${res}
+# d) 6-hr cumulative (0-6, 0-12, 0-18,...0-102):
+#      petss.6hr.cum.${prod}.t${cyc}z.stormtide.${area}${res}
+#
+# There should be also 4 grib2 files for each product for surge plus tide AGL:
+# e) 102-hr cumulative (0-102):
+#      petss.agl.102hr.cum.${prod}.t${cyc}z.stormtide.${area}${res}.grib2
+# f) 1-hr incremental (0-1, 1-2, 2-3,...101-102):
+#      petss.agl.1hr.inc.${prod}.t${cyc}z.stormtide.${area}${res}.grib2
+# g) 6-hr incremental (0-6, 6-12, 12-18,...96-102):
+#      petss.agl.6hr.inc.${prod}.t${cyc}z.stormtide.${area}${res}.grib2
+# h) 6-hr cumulative (0-6, 0-12, 0-18,...0-102):
+#      petss.agl.6hr.cum.${prod}.t${cyc}z.stormtide.${area}${res}.grib2
+#
+# Where: 
+#     ${prod} = max/min/mean/10p/1ft.chance/2ft.chance/3ft.chance/6ft.chance/9ft.chance
+#     ${area}${res} = con625m/con2p5km/ala3km
+#     ${cyc} = 00/06/12/18
+#===================================================================
+
+# Step 2: check the text files for surge only and surge plus tide results
+% ls tmp/com/petss/prod/petss.YYYYMMDD/petss*.txt
+
+#===================================================================
+# There should be 5 station text files in each product for surge only and surge
+# plus tide:
+#     petss.${prod}.t${cyc}z.stormsurge.${std}.txt 
+#     petss.${prod}.t${cyc}z.stormtide.${std}.txt 
+# Where:
+#     ${prod} = max/min/mean/10p/90p
+#     ${std} = wst/goa/ber/est/gom
+#     ${cyc} = 00/06/12/18
+#===================================================================
+
+# Step 3: Compare the results to Huiqing's runs 
+#===================================================================
+#    tree1=/gpfs/hps/ptmp/mdl.surge/PETSS_cron_output/tmp/com/petss/prod/petss.YYYYMMDD (Cray) 
+#    tree2=/com/petss/prod//petss.YYYYMMDD (Your /com folder)
+#===================================================================
+% diff -rq ${tree1} ${tree2}
+
+#===================================================================
+# There should be no differences if everything is correct
+#===================================================================

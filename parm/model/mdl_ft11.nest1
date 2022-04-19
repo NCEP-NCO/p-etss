@@ -1,0 +1,25 @@
+6                          NUMBER OF BASINS
+47,40         T/B LAT'S    pn2  
+W             WEST LONG    pn2
+73,63         L/R LON'S    pn2
+FQUS23 KWNO 000000
+46,39         T/B LAT'S    pv2
+W             WEST LONG    pv2
+75,67         L/R LON'S    pv2
+FQGX23 KWNO 000000
+45,36         T/B LAT'S    ny3
+W             WEST LONG    ny3
+76,69         L/R LON'S    ny3
+FQAK23 KWNO 000000
+42,36         T/B LAT'S    de3
+W             WEST LONG    de3
+77,70         L/R LON'S    de3
+FQPZ23 KWNO 000000
+41,34         T/B LAT'S    cp5 
+W             WEST LONG    cp5
+78,73         L/R LON'S    cp5
+FQAC23 KWNO 000000
+41,33         T/B LAT'S    hor3  
+W             WEST LONG    hor3
+79,73         L/R LON'S    hor3
+FQGA23 KWNO 000000

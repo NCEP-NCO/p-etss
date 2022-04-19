@@ -1,0 +1,13 @@
+#!/bin/bash
+
+####################################
+# mimic'ing what dbn_alert might do.
+####################################
+DATE="/bin/date +%Y-%m-%dT%H:%M:%S"
+
+src=$(cd $(dirname $0) && pwd)
+root=${src}/../..
+
+export MDLTEST_DIR=${MDLTEST_DIR:-${root}}
+
+echo -e "dbn_alert: `${DATE}`\n    $1 $2 $3\n    $4 $5 $6" >> ${MDLTEST_DIR}/DBN_Messages.txt 

@@ -1,0 +1,121 @@
+#!/bin/bash
+
+#########################################################
+# Runs MDL Probabilistic Extratropical Storm Surge Model
+#########################################################
+
+set -x
+date
+export PS4=' $SECONDS + '
+
+#####################################
+# SET SHELL PROCESSING VARIABLES
+#####################################
+
+export pid=$$
+#export DATA=${DATA:-${DATAROOT:?}/petss_${PDY:?}_${cyc:?}}
+export DATA=${DATA:-${DATAROOT:?}/petss_${cyc:?}}
+rm -rf $DATA
+mkdir $DATA
+cd $DATA
+
+export LOCALJLOG="YES"
+export jlogfile="${DATA}/jlogfile.${jobid:?}"
+
+export pgmout="OUTPUT.${pid}"
+export cycle=${cycle:-t${cyc}z}
+
+export WIND=${WIND:-NAEFS}
+export RUN_NewGEFS=${RUN_NewGEFS:-YES}
+export RUN_RETRO=${RUN_RETRO:-NO}
+
+if [[ ${WIND} == NAEFS ]]; then
+   if [[ ${RUN_NewGEFS} == YES ]] ; then
+     export cpuNUM=104
+   else
+     export cpuNUM=84
+   fi
+elif [[ ${WIND} == GEFS ]]; then
+    if [[ ${RUN_NewGEFS} == YES ]] ; then
+       export cpuNUM=62
+    else
+       export cpuNUM=42
+    fi
+fi
+
+export RUN_ENVIR=${RUN_ENVIR:-nco}
+export HIGHRES=${HIGHRES:-NO}
+
+export NETgfs=${NETgfs:-gefs}
+export NETcmce=${NETcmc:-cmce}
+export NETgefs=${NETgefs:-gefs}
+export NET=${NET:-petss}
+export RUN=${RUN:-petss}
+
+###################################
+# Set up the UTILITIES
+###################################
+
+export EXECpetss=$HOMEpetss/exec
+export PARMpetss=$HOMEpetss/parm
+export USHpetss=$HOMEpetss/ush
+export SCRIpetss=$HOMEpetss/scripts
+
+
+# Run setup to initialize working directory and utility scripts
+setpdy.sh
+. ./PDY
+
+##############################
+# Define COM Directories
+##############################
+export COMINSS=${COMINSS:-$(compath.py ${NET}/${petss_ver})}
+
+export COMINgefs=${COMINgefs:-$(compath.py  ${NETgfs}/${gefs_ver}/${NETgefs}.$PDY)}
+export COMINgefsm1=${COMINgefsm1:-$(compath.py  ${NETgfs}/${gefs_ver}/${NETgefs}.$PDYm1)}
+export COMINgefsm2=${COMINgefsm2:-$(compath.py  ${NETgfs}/${gefs_ver}/${NETgefs}.$PDYm2)}
+export COMINgefsm3=${COMINgefsm3:-$(compath.py  ${NETgfs}/${gefs_ver}/${NETgefs}.$PDYm3)}
+
+export COMINcmce=${COMINcmce:-${DCOMROOT:?}/${PDY}/wgrbbul/cmcens_gb2}
+export COMINcmcem1=${COMINcmcem1:-${DCOMROOT:?}/${PDYm1}/wgrbbul/cmcens_gb2}
+export COMINcmcem2=${COMINcmcem2:-${DCOMROOT:?}/${PDYm2}/wgrbbul/cmcens_gb2}
+export COMINcmcem3=${COMINcmcem3:-${DCOMROOT:?}/${PDYm3}/wgrbbul/cmcens_gb2}
+export COMINcmcem4=${COMINcmcem4:-${DCOMROOT:?}/${PDYm4}/wgrbbul/cmcens_gb2}
+export COMINcmcem5=${COMINcmcem5:-${DCOMROOT:?}/${PDYm5}/wgrbbul/cmcens_gb2}
+
+export COMOUT=${COMOUT:-$(compath.py -o ${NET}/${petss_ver}/${RUN}.${PDY})}
+export COMOUTwmo=${COMOUTwmo:-${COMOUT:?}/wmo}
+
+#export COMIN_ETSS=${COMIN_ETSS:-$(compath.py etss/prod/etss.$PDY)}
+
+
+mkdir -p $COMOUT $COMOUTwmo
+if [[ ${HIGHRES} == "YES" ]]; then
+   mkdir -p $COMOUT/highres
+fi
+##########################################################################
+
+env
+########################################################
+# Execute the script.
+########################################################
+${SCRIpetss}/expetss_prewnd.sh
+########################################################
+export err=$?; err_chk
+
+msg="JOB $job HAS COMPLETED NORMALLY."
+postmsg $jlogfile "$msg"
+
+if [[ "${LOCALJLOG}" == "YES" ]]; then
+  if [[ ! -r "${jlogfile}" ]]; then
+    echo "Cannot read jlogfile (${jlogfile})"
+  elif [[ ! -s "${jlogfile}" ]]; then
+    echo "Jlogfile (${jlogfile}) is 0 bytes."
+  else
+    cp "${jlogfile}" "${COMOUT}"
+  fi
+fi
+
+cat $pgmout
+
+date

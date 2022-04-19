@@ -1,0 +1,33 @@
+#PBS -N petss_postprob_%CYC%
+#PBS -j oe
+#PBS -A %PROJ%-%PROJENVIR%
+#PBS -q %QUEUE%
+#PBS -l walltime=00:15:00
+#PBS -l place=vscatter,select=2:ncpus=128:mpiprocs=128:ompthreads=1:mem=60GB+1:ncpus=18:mpiprocs=18:ompthreads=1:mem=20GB
+#PBS -l debug=true
+
+model=petss
+%include <head.h>
+%include <envir-p1.h>
+
+export cyc=%CYC%
+
+module load intel/${intel_ver}
+#module load craype/${craype_ver}
+module load cray-pals/${cray_pals_ver}
+module load cfp/${cfp_ver}
+
+# CALL executable job script here
+${HOMEpetss}/jobs/JPETSS_POSTPROB
+
+if [ $? -ne 0 ]; then
+  ecflow_client --abort="ERROR running J-job"
+  exit
+fi
+
+%include <tail.h>
+%manual
+#######################################################################
+# Purpose: To execute the job that runs the ETSS model on WCOSS
+#######################################################################
+%end

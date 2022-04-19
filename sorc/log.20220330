@@ -1,0 +1,298 @@
+Resetting modules to system default. Reseting $MODULEPATH back to system default. All extra directories will be removed from $MODULEPATH.
+-----------------------------------
+First, compile petss model codes:
+-----------------------------------
+Attempting to compile petss_in_wind_hindcst.
+(cd ./petss_in_wind_hindcst.fd && make)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_in_wind_hindcst.fd'
+ftn -O3 -I /apps/ops/prod/libs/intel/19.1.3.304/g2/3.4.1/include_4  -c -o wind_hindcst_cmc.o wind_hindcst_cmc.f
+ftn -O3 -I /apps/ops/prod/libs/intel/19.1.3.304/g2/3.4.1/include_4  -c -o wind_hindcst_gefs.o wind_hindcst_gefs.f
+ftn -O3 -I /apps/ops/prod/libs/intel/19.1.3.304/g2/3.4.1/include_4  -c -o wind_hindcst.o wind_hindcst.f
+ftn  -o petss_in_wind_hindcst wind_hindcst_cmc.o wind_hindcst_gefs.o wind_hindcst.o /apps/ops/prod/libs/intel/19.1.3.304/g2/3.4.1/lib/libg2_4.a /apps/ops/prod/libs/intel/19.1.3.304/w3nco/2.4.1/lib/libw3nco_4.a /apps/ops/prod/libs/intel/19.1.3.304/bacio/2.4.1/lib/libbacio_4.a /apps/spack/jasper/2.0.25/intel/19.1.3.304/sjib74krrorkyczqpqah4tvewmlnqdx4/lib64/libjasper.a /apps/spack/libpng/1.6.37/intel/19.1.3.304/4ohkronuhlyherusoszzrmur5ewvlwzh/lib/libpng.a /apps/spack/zlib/1.2.11/intel/19.1.3.304/hjotqkckeoyt6j6tibalwzrlfljcjtdh/lib/libz.a
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_in_wind_hindcst.fd'
+Attempting to compile petss_in_wind_fcst.
+(cd ./petss_in_wind_fcst.fd && make)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_in_wind_fcst.fd'
+ftn -O3 -I /apps/ops/prod/libs/intel/19.1.3.304/g2/3.4.1/include_4  -c -o wind_fcst_cmc.o wind_fcst_cmc.f
+ftn -O3 -I /apps/ops/prod/libs/intel/19.1.3.304/g2/3.4.1/include_4  -c -o wind_fcst_gefs.o wind_fcst_gefs.f
+ftn -O3 -I /apps/ops/prod/libs/intel/19.1.3.304/g2/3.4.1/include_4  -c -o wind_fcst.o wind_fcst.f
+ftn  -o petss_in_wind_fcst wind_fcst_cmc.o wind_fcst_gefs.o wind_fcst.o /apps/ops/prod/libs/intel/19.1.3.304/g2/3.4.1/lib/libg2_4.a /apps/ops/prod/libs/intel/19.1.3.304/w3nco/2.4.1/lib/libw3nco_4.a /apps/ops/prod/libs/intel/19.1.3.304/bacio/2.4.1/lib/libbacio_4.a /apps/spack/jasper/2.0.25/intel/19.1.3.304/sjib74krrorkyczqpqah4tvewmlnqdx4/lib64/libjasper.a /apps/spack/libpng/1.6.37/intel/19.1.3.304/4ohkronuhlyherusoszzrmur5ewvlwzh/lib/libpng.a /apps/spack/zlib/1.2.11/intel/19.1.3.304/hjotqkckeoyt6j6tibalwzrlfljcjtdh/lib/libz.a
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_in_wind_fcst.fd'
+Attempting to compile petss_model.
+(cd ./petss_model.fd && make)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_model.fd'
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. amyutil.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. clock.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. complex.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. mpiutil.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. myassert.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. myutil.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. rex.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. pack.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. savellx.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. setup.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. slosh2.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. tendian.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. tideutil.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. tio3.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. usrparse.c
+cc -c -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. cstart.c
+ftn -c -O3 -w parm_gfs.f
+ftn -c -O3 -w etsssub_naefs.f
+ftn -c -O3 -w nestbound.f
+ftn -c -O3 -w intrface_naefs.f
+ftn -c -O3 -w runslhg.f
+ftn -c -O3 -w spinup.f
+ftn -nofor_main  -O3 -w -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I.  amyutil.o clock.o complex.o mpiutil.o myassert.o myutil.o rex.o pack.o savellx.o setup.o slosh2.o tendian.o tideutil.o tio3.o usrparse.o cstart.o parm_gfs.o etsssub_naefs.o nestbound.o intrface_naefs.o runslhg.o spinup.o  -L -lm -o petss_model /apps/ops/prod/libs/intel/19.1.3.304/w3nco/2.4.1/lib/libw3nco_4.a
+strip -s petss_model
+
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_model.fd'
+Attempting to compile petss_model_13consti.
+(cd ./petss_model_13consti.fd && make)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_model_13consti.fd'
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. amyutil.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. clock.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. complex.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. mpiutil.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. myassert.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. myutil.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. rex.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. pack.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. savellx.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. setup.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. slosh2.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. tendian.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. tideutil.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. tio3.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. usrparse.c
+cc -c -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I. cstart.c
+ftn -c -O3 -w  parm_gfs.f
+ftn -c -O3 -w  etsssub_naefs.f
+ftn -c -O3 -w  nestbound.f
+ftn -c -O3 -w  intrface_naefs.f
+ftn -c -O3 -w  runslhg.f
+ftn -c -O3 -w  spinup.f
+ftn -nofor_main  -O3 -w  -D_LINUX_ -D_GCC_ -DSIZEOF_LONG_INT=8 -DCC_VER="\"\"" -D_EXPR_ -I.  amyutil.o clock.o complex.o mpiutil.o myassert.o myutil.o rex.o pack.o savellx.o setup.o slosh2.o tendian.o tideutil.o tio3.o usrparse.o cstart.o parm_gfs.o etsssub_naefs.o nestbound.o intrface_naefs.o runslhg.o spinup.o  -L -lm -o petss_model_13consti /apps/ops/prod/libs/intel/19.1.3.304/w3nco/2.4.1/lib/libw3nco_4.a
+strip -s petss_model_13consti
+
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_model_13consti.fd'
+Attempting to compile petss_post_sort.
+(cd ./petss_post_sort.fd && make)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_sort.fd'
+ftn -c -O3 post_sort.f90
+ftn -c -O3 grid_exceedance_all.f90
+ftn -c -O3 grid_probabl_all.f90
+ftn -c -O3 stn_sort_all.f90
+ftn -O3 -o petss_post_sort post_sort.o grid_exceedance_all.o grid_probabl_all.o stn_sort_all.o 
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_sort.fd'
+Attempting to compile petss_out_stn.
+(cd ./petss_out_stn.fd && make)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_out_stn.fd'
+ftn -O3  -c -o out_stn.o out_stn.f
+ftn -O3  -c -o extrCoarseRes.o extrCoarseRes.f
+ftn -O3  -c -o extrCoarseRes_eBBC.o extrCoarseRes_eBBC.f
+ftn -O3  -c -o extrFineRes.o extrFineRes.f
+ftn  -o petss_out_stn out_stn.o extrCoarseRes.o extrCoarseRes_eBBC.o extrFineRes.o /apps/ops/prod/libs/intel/19.1.3.304/g2/3.4.1/lib/libg2_4.a /apps/ops/prod/libs/intel/19.1.3.304/w3nco/2.4.1/lib/libw3nco_4.a /apps/ops/prod/libs/intel/19.1.3.304/bacio/2.4.1/lib/libbacio_4.a /apps/spack/jasper/2.0.25/intel/19.1.3.304/sjib74krrorkyczqpqah4tvewmlnqdx4/lib64/libjasper.a /apps/spack/libpng/1.6.37/intel/19.1.3.304/4ohkronuhlyherusoszzrmur5ewvlwzh/lib/libpng.a /apps/spack/zlib/1.2.11/intel/19.1.3.304/hjotqkckeoyt6j6tibalwzrlfljcjtdh/lib/libz.a  
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_out_stn.fd'
+Attempting to compile petss_out_grid.
+(cd ./petss_out_grid.fd && make)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_out_grid.fd'
+ftn -O3  -c -o out_grid.o out_grid.f
+ftn -O3  -c -o map_proj.o map_proj.f
+ftn -O3  -c -o merge3km.o merge3km.f
+ftn -O3  -c -o merge2p5km.o merge2p5km.f
+ftn -O3  -c -o merge625m.o merge625m.f
+ftn -O3  -c -o mkgrib.o mkgrib.f
+ftn  -o petss_out_grid out_grid.o map_proj.o merge3km.o merge2p5km.o merge625m.o mkgrib.o /apps/ops/prod/libs/intel/19.1.3.304/g2/3.4.1/lib/libg2_4.a /apps/ops/prod/libs/intel/19.1.3.304/w3nco/2.4.1/lib/libw3nco_4.a /apps/ops/prod/libs/intel/19.1.3.304/bacio/2.4.1/lib/libbacio_4.a /apps/spack/jasper/2.0.25/intel/19.1.3.304/sjib74krrorkyczqpqah4tvewmlnqdx4/lib64/libjasper.a /apps/spack/libpng/1.6.37/intel/19.1.3.304/4ohkronuhlyherusoszzrmur5ewvlwzh/lib/libpng.a /apps/spack/zlib/1.2.11/intel/19.1.3.304/hjotqkckeoyt6j6tibalwzrlfljcjtdh/lib/libz.a  
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_out_grid.fd'
+-----------------------------------
+Secondly, compile petss-post processing codes:
+-----------------------------------
+Compiling libraries
+********
+(cd ../lib/ && make clean install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/lib'
+(cd sorc/emapf-c && make clean)
+make[2]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/lib/sorc/emapf-c'
+rm -f cc2gll.o cc2gxy.o ccurv.o cg2cll.o cgszll.o cgszxy.o cpolll.o cpolxy.o eqvlat.o logabova.o mkgeoid.o stcm1p.o stcm2p.o stlmbr.o ymercfns.o libemapf.a
+make[2]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/lib/sorc/emapf-c'
+(cd sorc/emapf-c && make clean install)
+make[2]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/lib/sorc/emapf-c'
+rm -f cc2gll.o cc2gxy.o ccurv.o cg2cll.o cgszll.o cgszxy.o cpolll.o cpolxy.o eqvlat.o logabova.o mkgeoid.o stcm1p.o stcm2p.o stlmbr.o ymercfns.o libemapf.a
+cc   -c -O2 -g   cc2gll.c
+cc   -c -O2 -g   cc2gxy.c
+cc   -c -O2 -g   ccurv.c
+cc   -c -O2 -g   cg2cll.c
+cc   -c -O2 -g   cgszll.c
+cc   -c -O2 -g   cgszxy.c
+cc   -c -O2 -g   cpolll.c
+cc   -c -O2 -g   cpolxy.c
+cc   -c -O2 -g   eqvlat.c
+cc   -c -O2 -g   logabova.c
+cc   -c -O2 -g   mkgeoid.c
+cc   -c -O2 -g   stcm1p.c
+cc   -c -O2 -g   stcm2p.c
+cc   -c -O2 -g   stlmbr.c
+cc   -c -O2 -g   ymercfns.c
+ar r libemapf.a cc2gll.o cc2gxy.o ccurv.o cg2cll.o cgszll.o cgszxy.o cpolll.o cpolxy.o eqvlat.o logabova.o mkgeoid.o stcm1p.o stcm2p.o stlmbr.o ymercfns.o cmapf.h
+ar: creating libemapf.a
+/usr/bin/ranlib   libemapf.a
+mv libemapf.a ../../
+make[2]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/lib/sorc/emapf-c'
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/lib'
+Compiling combAll, obsAll, debufr, surgeAll, tideAll, degrib and drawshp executables
+********
+(cd ./petss_post_combAll.fd && make all)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_combAll.fd'
+ftn -assume no2underscores -c defgridstns.f numlines.f makeSHEF.f
+ftn defgridstns.o numlines.o makeSHEF.o combineAll.f -o petss_post_combAll
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_combAll.fd'
+(cd ./petss_post_obsAll.fd && make all)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_obsAll.fd'
+ftn -assume no2underscore -c numlines.f
+ftn -assume no2underscore -c defgridstns.f
+ftn -assume no2underscore -c combineObs.f
+ftn numlines.o defgridstns.o combineObs.o -o petss_post_obsAll
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_obsAll.fd'
+(cd ./petss_post_debufr.fd && make all)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_debufr.fd'
+cc -c -DUNDERSCORE debufr.c 
+ftn -c -I. -I/apps/ops/prod/libs/intel/19.1.3.304/bufr/11.4.0/include_d_DA defgridstns.f
+ftn -c -I. -I/apps/ops/prod/libs/intel/19.1.3.304/bufr/11.4.0/include_d_DA griddata.f
+ftn -c -I. -I/apps/ops/prod/libs/intel/19.1.3.304/bufr/11.4.0/include_d_DA numlines.f
+ftn -c -I. -I/apps/ops/prod/libs/intel/19.1.3.304/bufr/11.4.0/include_d_DA myufdump.f
+ftn -c -I. -I/apps/ops/prod/libs/intel/19.1.3.304/bufr/11.4.0/include_d_DA myfdebufr.f
+cc debufr.o defgridstns.o griddata.o numlines.o myufdump.o myfdebufr.o -o petss_post_debufr -lifcore /apps/ops/prod/libs/intel/19.1.3.304/bufr/11.4.0/lib/libbufr_d_DA.a
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_debufr.fd'
+(cd ./petss_post_surgeAll.fd && make all)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_surgeAll.fd'
+ftn -assume no2underscore -c numlines.f
+ftn numlines.o getsurge.f -o petss_post_surgeAll
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_surgeAll.fd'
+(cd ./petss_post_tideAll.fd && make all)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_tideAll.fd'
+ftn -assume no2underscore -r8 -c gettide.f
+ftn -assume no2underscore -r8 -c calctide.f
+ftn -assume no2underscore -r8 -c sectide.f
+ftn -assume no2underscore -r8 -c tidemaxmin.f
+ftn -assume no2underscore -r8 -c numlines.f
+ftn gettide.o calctide.o sectide.o tidemaxmin.o numlines.o -o petss_post_tideAll
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_tideAll.fd'
+(cd ./degrib.cd && make)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/degrib.cd'
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include chain.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include clock.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include commands.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include cube.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include database.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include degrib1.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include degrib2.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include drawgrib.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include drawlib.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include engribapi.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include genprobe.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include grib1tab.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include grib2api.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include grpprobe.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include hazard.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include interp.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include inventory.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include ioapi.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include mapini.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include metaname.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include metaparse.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include metaprint.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include myassert.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include myerror.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include mymapf.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include myutil.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include myzip.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include pack.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include probe.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include scan.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include sector.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include solar.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include split.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include tdlpack.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include tendian.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include userparse.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include weather.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include writecsv.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include writeflt.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include writegra.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include writekml.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include writeshp.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D__64BIT__ -D_LINUX_ -I. -I/apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/include -I../../lib/sorc/emapf-c -I/usr/include zip.c
+cc cstart.c   chain.o clock.o commands.o cube.o database.o degrib1.o degrib2.o drawgrib.o drawlib.o engribapi.o genprobe.o grib1tab.o grib2api.o grpprobe.o hazard.o interp.o inventory.o ioapi.o mapini.o metaname.o metaparse.o metaprint.o myassert.o myerror.o mymapf.o myutil.o myzip.o pack.o probe.o scan.o sector.o solar.o split.o tdlpack.o tendian.o userparse.o weather.o writecsv.o writeflt.o writegra.o writekml.o writeshp.o zip.o /apps/ops/prod/libs/intel/19.1.3.304/g2c/1.6.2/lib/libg2c.a -L /usr/lib64/ -lgd /apps/spack/libpng/1.6.37/intel/19.1.3.304/4ohkronuhlyherusoszzrmur5ewvlwzh/lib/libpng.a /apps/spack/zlib/1.2.11/intel/19.1.3.304/hjotqkckeoyt6j6tibalwzrlfljcjtdh/lib/libz.a /apps/spack/jasper/2.0.25/intel/19.1.3.304/sjib74krrorkyczqpqah4tvewmlnqdx4/lib64/libjasper.a ../../lib/libemapf.a -o degrib
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/degrib.cd'
+(cd ./drawshp.cd && make)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/drawshp.cd'
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D_LINUX_ -I. -I../../lib/sorc/emapf-c -I/usr/include myassert.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D_LINUX_ -I. -I../../lib/sorc/emapf-c -I/usr/include myutil.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D_LINUX_ -I. -I../../lib/sorc/emapf-c -I/usr/include tendian.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D_LINUX_ -I. -I../../lib/sorc/emapf-c -I/usr/include mapini.c
+cc -c -O3 -Wall -DSIZEOF_LONG_INT=8 -D_LINUX_ -I. -I../../lib/sorc/emapf-c -I/usr/include drawlib.c
+cc drawshp.c   myassert.o myutil.o tendian.o mapini.o drawlib.o -L /usr/lib64/ -lgd /apps/spack/libpng/1.6.37/intel/19.1.3.304/4ohkronuhlyherusoszzrmur5ewvlwzh/lib/libpng.a /apps/spack/zlib/1.2.11/intel/19.1.3.304/hjotqkckeoyt6j6tibalwzrlfljcjtdh/lib/libz.a ../../lib/libemapf.a -o drawshp
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/drawshp.cd'
+(cd ./petss_in_wind_hindcst.fd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_in_wind_hindcst.fd'
+mv petss_in_wind_hindcst ../../exec
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_in_wind_hindcst.fd'
+(cd ./petss_in_wind_fcst.fd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_in_wind_fcst.fd'
+mv petss_in_wind_fcst ../../exec
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_in_wind_fcst.fd'
+(cd ./petss_model.fd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_model.fd'
+mv petss_model ../../exec
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_model.fd'
+(cd ./petss_model_13consti.fd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_model_13consti.fd'
+mv petss_model_13consti ../../exec
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_model_13consti.fd'
+(cd ./petss_post_sort.fd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_sort.fd'
+mv petss_post_sort ../../exec
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_sort.fd'
+(cd ./petss_out_stn.fd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_out_stn.fd'
+mv petss_out_stn ../../exec
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_out_stn.fd'
+(cd ./petss_out_grid.fd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_out_grid.fd'
+mv petss_out_grid ../../exec
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_out_grid.fd'
+(cd ./petss_post_combAll.fd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_combAll.fd'
+ftn defgridstns.o numlines.o makeSHEF.o combineAll.f -o petss_post_combAll
+mv petss_post_combAll ../../exec
+rm -f petss_post_combAll
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_combAll.fd'
+(cd ./petss_post_obsAll.fd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_obsAll.fd'
+mv petss_post_obsAll ../../exec
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_obsAll.fd'
+(cd ./petss_post_debufr.fd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_debufr.fd'
+cc debufr.o defgridstns.o griddata.o numlines.o myufdump.o myfdebufr.o -o petss_post_debufr -lifcore /apps/ops/prod/libs/intel/19.1.3.304/bufr/11.4.0/lib/libbufr_d_DA.a
+mv petss_post_debufr ../../exec
+rm -f petss_post_debufr
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_debufr.fd'
+(cd ./petss_post_surgeAll.fd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_surgeAll.fd'
+ftn numlines.o getsurge.f -o petss_post_surgeAll
+mv petss_post_surgeAll ../../exec
+rm -f petss_post_surgeAll
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_surgeAll.fd'
+(cd ./petss_post_tideAll.fd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_tideAll.fd'
+mv petss_post_tideAll ../../exec
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/petss_post_tideAll.fd'
+(cd ./degrib.cd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/degrib.cd'
+mv degrib ../../exec/
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/degrib.cd'
+(cd ./drawshp.cd && make install)
+make[1]: Entering directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/drawshp.cd'
+mv drawshp ../../exec/
+make[1]: Leaving directory '/lfs/h1/ops/prod/packages/petss.v1.2.1/sorc/drawshp.cd'

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+. ${HOMEpetss:?}/versions/run.ver
+
+qsub << EOF 
+  #PBS -N PETSS_COMBDAT.${pid}
+  #PBS -j oe
+  #PBS -l walltime=1:05:00
+  #PBS -q ${QUEUE:?}
+  #PBS -A ETSS-DEV
+  #PBS -l select=1:ncpus=2:mem=500MB
+  #PBS -l debug=true
+  #PBS -V
+  #PBS -W umask=022
+  #PBS -W depend=afterok:${petss_griddat_id}
+
+  module load PrgEnv-intel/${PrgEnv_intel_ver}
+  module load intel/${intel_ver}
+  module load craype/${craype_ver}
+  module load cray-pals/${cray_pals_ver}
+  module load prod_util/${prod_util_ver}
+  module load cfp/${cfp_ver}
+
+  ${HOMEpetss}/jobs/JPETSS_COMBDAT
+EOF

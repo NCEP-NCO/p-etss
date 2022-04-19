@@ -1,0 +1,72 @@
+###############################################################
+# Makefile for all the source codes under sorc folder
+# # Use:
+# # make - build the executable
+# # make install - build and copy the executable files to exec folder
+# # make clean - start with a clean slate
+# ###############################################################
+#
+all:
+	@echo "-----------------------------------"
+	@echo "First, compile petss model codes:"
+	@echo "-----------------------------------"
+	@echo "Attempting to compile petss_in_wind_hindcst."
+	(cd ./petss_in_wind_hindcst.fd && make)
+	@echo "Attempting to compile petss_in_wind_fcst."
+	(cd ./petss_in_wind_fcst.fd && make)
+	@echo "Attempting to compile petss_model."
+	(cd ./petss_model.fd && make)
+	@echo "Attempting to compile petss_model_13consti."
+	(cd ./petss_model_13consti.fd && make)
+	@echo "Attempting to compile petss_post_sort."
+	(cd ./petss_post_sort.fd && make)
+	@echo "Attempting to compile petss_out_stn."
+	(cd ./petss_out_stn.fd && make)
+	@echo "Attempting to compile petss_out_grid."
+	(cd ./petss_out_grid.fd && make)
+	@echo "-----------------------------------"
+	@echo "Secondly, compile petss-post processing codes:"
+	@echo "-----------------------------------"
+	@echo "Compiling libraries"
+	@echo "********"
+	(cd ../lib/ && make clean install)
+	@echo "Compiling combAll, obsAll, debufr, surgeAll, tideAll, degrib and drawshp executables"
+	@echo "********"
+	(cd ./petss_post_combAll.fd && make all)
+	(cd ./petss_post_obsAll.fd && make all)
+	(cd ./petss_post_debufr.fd && make all)
+	(cd ./petss_post_surgeAll.fd && make all)
+	(cd ./petss_post_tideAll.fd && make all)
+	(cd ./degrib.cd && make)
+	(cd ./drawshp.cd && make)
+install: all
+	(cd ./petss_in_wind_hindcst.fd && make install)
+	(cd ./petss_in_wind_fcst.fd && make install)
+	(cd ./petss_model.fd && make install)
+	(cd ./petss_model_13consti.fd && make install)
+	(cd ./petss_post_sort.fd && make install)
+	(cd ./petss_out_stn.fd && make install)
+	(cd ./petss_out_grid.fd && make install)
+	(cd ./petss_post_combAll.fd && make install)
+	(cd ./petss_post_obsAll.fd && make install)
+	(cd ./petss_post_debufr.fd && make install)
+	(cd ./petss_post_surgeAll.fd && make install)
+	(cd ./petss_post_tideAll.fd && make install)
+	(cd ./degrib.cd && make install)
+	(cd ./drawshp.cd && make install)
+clean:
+	(cd ./petss_in_wind_hindcst.fd && make clean)
+	(cd ./petss_in_wind_fcst.fd && make clean)
+	(cd ./petss_model.fd && make clean)
+	(cd ./petss_model_13consti.fd && make clean)
+	(cd ./petss_post_sort.fd && make clean)
+	(cd ./petss_out_stn.fd && make clean)
+	(cd ./petss_out_grid.fd && make clean)
+	(cd ./petss_post_combAll.fd && make clean)
+	(cd ./petss_post_obsAll.fd && make clean)
+	(cd ./petss_post_debufr.fd && make clean)
+	(cd ./petss_post_surgeAll.fd && make clean)
+	(cd ./petss_post_tideAll.fd && make clean)
+	(cd ./degrib.cd && make clean)
+	(cd ./drawshp.cd && make clean)
+	(cd ../lib && make clean)
